@@ -2,16 +2,18 @@ name: test
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
     workflow_dispatch:
-    
+env:
+  MEANING_OF_LIFE: ${{secrets.MEANING_OF_LIFE}}
 jobs:
-
-  build: 
+  build:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - uses: actions/checkout@v3
 
       #Runs a set of commands using the runners shell
