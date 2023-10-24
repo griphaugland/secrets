@@ -9,6 +9,7 @@ on:
     workflow_dispatch:
 env:
   MEANING_OF_LIFE: ${{secrets.MEANING_OF_LIFE}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,4 +21,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           npm ci
-          npm test
+          npm run test
